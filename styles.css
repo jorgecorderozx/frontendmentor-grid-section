@@ -21,11 +21,16 @@ body {
     font-family: Barlow Semi Condensed, sans-serif;
     background-color: var(--purple-50);
     font-weight: 500;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 main {
     display: grid;
     gap: 2rem;
+    max-width: 1300px;
 }
 
 .card {
@@ -140,5 +145,35 @@ blockquote {
 
     .card-kira {
         grid-column: span 3;
+    }
+}
+
+@media screen and (min-width:1280px) {
+
+    main {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    blockquote {
+        line-height: 1.6;
+        font-size: 14px;
+    }
+
+    .card-daniel {
+        background:url(images/bg-pattern-quotation.svg) no-repeat var(--purple-500) 92% 0% / 21%;
+    }
+
+    .card-jonathan p {
+        color: var(--grey-200)
+    }
+
+    .card-daniel, .card-patrick {
+        grid-column: span 2;
+    }
+
+    .card-kira {
+        grid-column: 4;
+        grid-row: 1 / span 2;
+
     }
 }
